@@ -95,6 +95,14 @@ Screw.Unit(function() {
       }); 
       
     });
+    
+    /* Reference */
+    describe('Reference', function() {
+      it("should pass by reference", function(){
+        var x = stooge;
+        expect(x["first-name"]).to(equal, "Jerome");
+      });
+    });
 
      /* Prototype
      */

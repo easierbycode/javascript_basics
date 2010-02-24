@@ -27,7 +27,7 @@ Screw.Unit(function () {
     */
     describe('Literals', function () {
       it("defined by curly braces", function () {
-        my_object = {};
+        var my_object = {};
         expect(typeof my_object).to(equal, 'object');
       });
     
@@ -143,7 +143,7 @@ Screw.Unit(function () {
       });
 
       it("should not look up the prototype chain with hasOwnProperty", function () {
-        another_flight = Object.beget(flight);
+        var another_flight = Object.beget(flight);
         expect(another_flight.hasOwnProperty('number')).to(equal, false);
       });        
     });
@@ -152,7 +152,8 @@ Screw.Unit(function () {
     */
     describe('Enumeration', function () {
       it("can loop over property names in an object", function () {
-        properties = [];
+        var name;
+        var properties = [];
         for (name in stooge) {
           if (typeof another_stooge[name] !== 'function') {
             properties.push(name);

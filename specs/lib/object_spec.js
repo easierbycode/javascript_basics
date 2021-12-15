@@ -59,8 +59,11 @@ Screw.Unit(function () {
       });
       
       it("can throw a TypeError exception when retrieving values from undefined", function () {
-        expect(flight.equipment).to(equal, undefined);
-        // flight.equipment.model throw "TypeError" -- how do I do this?
+        try {
+          flight.equipment.model
+        } catch ( e ) {
+          expect( e instanceof TypeError ).to( equal, true )
+        }
       });
 
       it("can guard against TypeError exception with the && operator", function () {
